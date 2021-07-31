@@ -1,0 +1,128 @@
+@use "sass:math";
+@use '../../01-settings/colors' as c;
+@use '../../01-settings/dimensions' as d;
+@use '../../01-settings/fonts';
+@use '../../02-tools/functions' as f;
+@use '../../02-tools/extends';
+@use '../../02-tools/mixins' as m;
+
+.c-nav {
+    $toggle: ".c-nav__toggle";
+    $header-height: d.$header-padding * 2 + d.$header-logo-height;
+
+    &__toggle {
+        cursor: pointer;
+    }
+
+    &__toggle-icon-bar {
+        display: block;
+        position: relative;
+        width: 2em;
+        height: 0.25em;
+        background-color: c.$white;
+        transition: all .5s;
+
+        &:not(:last-child) {
+            margin-bottom: 0.5em;
+        }
+
+        &--first {
+            transform-origin: left;
+        }
+
+        &--second {
+            transform-origin: center;
+        }
+
+        &--third {
+            transform-origin: right;
+        }
+    }
+
+    &__toggle-checkbox {
+        display: none;
+
+        &:checked {
+            &
+                ~ #{selector-append($toggle, '-icon')}
+                #{selector-append($toggle, '-icon-bar')} {
+                &--first {
+                    transform: rotate(45deg);
+                    left: 0.15em;
+                }
+
+                &--second {
+                    transform: rotate(315deg);
+                    right: 0.15em;
+                }
+
+                &--third {
+                    transform: scaleX(0);
+                }
+            }
+        }
+    }
+
+    &__items {
+        visibility: hidden;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        transform: translateY(-1px);
+        width: 100%;
+        height: 0;
+        background: linear-gradient(to bottom, c.$blue-1, c.$blue-2 100%);
+        overflow: auto;
+        transition: all .5s ease-in-out;
+
+        &--open {
+            visibility: visible;
+            height: calc(100vh - #{$header-height});
+            transition-delay: 0.15s;
+        }
+    }
+
+    &__container {
+        @extend %wide-container;
+
+        padding-top: d.$header-padding;
+    }
+
+    &__item {
+        &:not(:first-child) {
+            padding-top: 0.75em;
+        }
+
+        &:not(:last-child) {
+            padding-bottom: 0.75em;
+            border-bottom: 1px solid rgba(c.$white, 0.5);
+        }
+    }
+
+    &__link {
+        color: c.$white;
+        font-family: fonts.$primary-font-stack;
+        font-weight: 400;
+        font-size: 1rem;
+        text-transform: uppercase;
+        line-height: math.div(19, 11);
+        letter-spacing: 3.4px;
+        transition: color .3s ease-in-out;
+
+        &:hover {
+            color: c.$grey-1;
+        }
+
+        &:focus {
+            border: 1px dotted c.$grey-1;
+        }
+
+        @include m.media-breakpoint-up(md) {
+            font-size: 1.25rem;
+        }
+
+        @include m.media-breakpoint-up(lg) {
+            font-size: f.rem(11);
+        }
+    }
+}

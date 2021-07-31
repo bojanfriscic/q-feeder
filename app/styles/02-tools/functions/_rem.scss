@@ -1,0 +1,14 @@
+@use 'sass:math';
+$default-context-rem: 16;
+
+@function rem($pixels, $context: $default-context-rem) {
+    @if (unitless($pixels)) {
+        $pixels: $pixels * 1px;
+    }
+
+    @if (unitless($context)) {
+        $context: $context * 1px;
+    }
+
+    @return math.div($pixels, $context) * 1rem;
+}

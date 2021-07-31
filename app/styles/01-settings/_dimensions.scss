@@ -1,0 +1,4 @@
+@use '../02-tools/functions' as f;
+
+$header-padding: f.rem(27);
+$header-logo-height: f.rem(26);

@@ -1,0 +1,22 @@
+@use '../01-settings/colors' as c;
+@use '../01-settings/fonts' as f;
+
+body {
+    background-color: c.$white;
+    color: c.$black-2;
+    font-family: f.$primary-font-stack;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+// Fix whitespace bottom and safari image distortion
+figure,
+picture,
+img {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
