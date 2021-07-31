@@ -19,7 +19,6 @@
     &__container {
         display: flex;
         justify-content: space-between;
-        background-color: coral;
     }
 
     &__logo {
@@ -30,5 +29,9 @@
     &__image {
         height: 100%;
         object-fit: cover;
+    }
+
+    &__right {
+        display: flex;
     }
 }

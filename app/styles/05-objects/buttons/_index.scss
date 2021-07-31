@@ -1,0 +1,23 @@
+@use '../../01-settings/colors' as c; 
+@use '../../01-settings/fonts';
+@use '../../02-tools/functions' as f;
+
+.o-button {
+    padding: 1rem f.rem(41);
+    border: 2px solid c.$blue-3;
+    color: c.$blue-1;
+    font-family: fonts.$secondary-font-stack;
+    font-size: f.rem(11);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 3.4px;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        background-color: c.$blue-3;
+        color: c.$white;
+    }
+}

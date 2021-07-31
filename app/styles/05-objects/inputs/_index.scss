@@ -1,0 +1,18 @@
+@use '../../01-settings/colors' as c;
+@use '../../01-settings/fonts';
+@use '../../02-tools/functions' as f;
+
+.o-input {
+    padding: 0.9rem 0.75rem;
+    border: 2px solid c.$black-2;
+    border-radius: 0;
+    font-size: f.rem(11);
+    font-family: fonts.$primary-font-stack;
+    font-weight: 400;
+    line-height: 1;
+
+    &:focus-visible {
+        border-color: c.$blue-1;
+        border-radius: 0;
+    }
+}

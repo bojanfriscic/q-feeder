@@ -14,41 +14,59 @@
   <body>
     <header class="c-header js-header">
       <div class="c-header__container o-wide-container">
-        <a href="#" class="c-header__logo">
-          <img src="./images/feeder-logo.png" alt="FEEDER" class="c-header__image">
-        </a>
-        <nav class="c-nav js-nav">
-          <label class="c-nav__toggle">
-            <input type="checkbox" class="c-nav__toggle-checkbox">
-            <div class="c-nav__toggle-icon js-nav-toggle">
-              <span class="c-nav__toggle-icon-bar c-nav__toggle-icon-bar--first"></span>
-              <span class="c-nav__toggle-icon-bar c-nav__toggle-icon-bar--second"></span>
-              <span class="c-nav__toggle-icon-bar c-nav__toggle-icon-bar--third"></span>
+        <section class="c-header__left">
+          <a href="#" class="c-header__logo">
+            <img src="./images/feeder-logo.png" alt="FEEDER" class="c-header__image">
+          </a>
+        </section>
+        <section class="c-header__right">
+          <nav class="c-nav js-nav">
+            <label class="c-nav__toggle">
+              <input type="checkbox" class="c-nav__toggle-checkbox">
+              <div class="c-nav__toggle-icon js-nav-toggle">
+                <span class="c-nav__toggle-icon-bar c-nav__toggle-icon-bar--first"></span>
+                <span class="c-nav__toggle-icon-bar c-nav__toggle-icon-bar--second"></span>
+                <span class="c-nav__toggle-icon-bar c-nav__toggle-icon-bar--third"></span>
+              </div>
+            </label>
+            <ul class="c-nav__items js-nav-items">
+              <div class="c-nav__container">
+                <li class="c-nav__item">
+                  <a href="#" class="c-nav__link">Home</a>
+                </li>
+                <li class="c-nav__item">
+                  <a href="#" class="c-nav__link">Features</a>
+                </li>
+                <li class="c-nav__item">
+                  <a href="#" class="c-nav__link">About Us</a>
+                </li>
+                <li class="c-nav__item">
+                  <a href="#" class="c-nav__link">Portfolio</a>
+                </li>
+                <li class="c-nav__item">
+                  <a href="#" class="c-nav__link">Services</a>
+                </li>
+                <li class="c-nav__item">
+                  <a href="#" class="c-nav__link">Contact Us</a>
+                </li>
+              </div>
+            </ul>
+          </nav>
+          <section class="c-search js-search">
+            <button class="c-search__toggle js-search-toggle" type="button">
+              <img src="./images/icon-find.png" alt="Search" class="c-search__toggle-icon">
+            </button>
+            <div class="c-search__backdrop js-search-backdrop">
+              <article class="c-search__box js-search-box">
+                <button class="c-search__close js-search-close">&times;</button>
+                <form class="c-search__form">
+                  <input type="text" class="c-search__input o-input" placeholder="What are you looking for?">
+                  <button class="c-search__submit o-button">Search</button>
+                </form>
+              </article>
             </div>
-          </label>
-          <ul class="c-nav__items js-nav-items">
-            <div class="c-nav__container">
-              <li class="c-nav__item">
-                <a href="#" class="c-nav__link">Home</a>
-              </li>
-              <li class="c-nav__item">
-                <a href="#" class="c-nav__link">Features</a>
-              </li>
-              <li class="c-nav__item">
-                <a href="#" class="c-nav__link">About Us</a>
-              </li>
-              <li class="c-nav__item">
-                <a href="#" class="c-nav__link">Portfolio</a>
-              </li>
-              <li class="c-nav__item">
-                <a href="#" class="c-nav__link">Services</a>
-              </li>
-              <li class="c-nav__item">
-                <a href="#" class="c-nav__link">Contact Us</a>
-              </li>
-            </div>
-          </ul>
-        </nav>
+          </section>
+        </section>
       </div>
     </header>
     <main>
