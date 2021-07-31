@@ -46,7 +46,6 @@ function styles() {
         .pipe($.postcss([
             autoprefixer()
         ]))
-        //.pipe(dest($if(!isProd, )'.tmp/styles'))
         .pipe($.if(!isProd, dest('.tmp/styles'), dest('dist/styles')))
         .pipe(server.reload({
             stream: true
