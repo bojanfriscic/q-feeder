@@ -46,9 +46,7 @@ function styles() {
         .pipe($.postcss([
             autoprefixer()
         ]))
-        .pipe(dest('.tmp/styles', {
-            sourcemaps: !isProd,
-        }))
+        .pipe($.if(!isProd, dest('.tmp/styles'), dest('dist/styles')))
         .pipe(server.reload({
             stream: true
         }));
@@ -74,9 +72,7 @@ function scripts() {
         .pipe(source('bundle.js'))
         .pipe($.plumber())
         .pipe(buffer())
-        .pipe(dest('.tmp/scripts', {
-            sourcemaps: !isProd ? '.' : false,
-        }))
+        .pipe($.if(!isProd, dest('.tmp/scripts'), dest('dist/scripts')))
         .pipe(server.reload({
             stream: true
         }));
