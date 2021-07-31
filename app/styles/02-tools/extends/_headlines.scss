@@ -1,0 +1,20 @@
+
+@use 'sass:math';
+@use '../../01-settings/colors' as c;
+@use '../../01-settings/fonts';
+@use '../../02-tools/functions' as f;
+@use '../../02-tools/mixins' as m;
+
+%section-headline {
+    margin-bottom: 2rem;
+    color: c.$black-1;
+    font-family: fonts.$primary-font-stack;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: math.div(44, 32);
+
+    @include m.media-breakpoint-up(lg) {
+        margin-bottom: f.rem(40);
+        font-size: 2rem;
+    }
+}

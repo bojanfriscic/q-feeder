@@ -5,8 +5,6 @@ export class Hero {
         this.offset = document.querySelector('.js-header').offsetHeight;
         this.target = document.querySelector('.js-about').offsetTop;
 
-        console.dir(this.target);
-
         this.init();
     }
 

@@ -1,0 +1,24 @@
+@use '../../01-settings/colors' as c;
+@use '../../01-settings/fonts';
+@use '../../02-tools/functions' as f;
+@use '../../02-tools/extends';
+@use '../../02-tools/mixins' as m;
+
+.c-about {
+    padding: f.rem(73) 0 f.rem(94);
+
+    &__headline {
+        @extend %section-headline;
+        text-align: center;
+    }
+
+    &__text {
+        @extend %section-text;
+        text-align: center;
+
+        @include m.media-breakpoint-up(xl) {
+            width: 78.94%;
+            margin: 0 auto;
+        }
+    }
+}

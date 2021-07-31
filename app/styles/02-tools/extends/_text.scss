@@ -1,0 +1,11 @@
+@use '../../01-settings/colors' as c;
+@use '../../01-settings/fonts';
+@use '../functions' as f;
+
+%section-text {
+    color: c.$black-2;
+    font-family: fonts.$primary-font-stack;
+    font-weight: 300;
+    font-size: f.rem(15);
+    line-height: 2;
+}
