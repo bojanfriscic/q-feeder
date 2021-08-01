@@ -1,0 +1,205 @@
+@use 'sass:math';
+@use '../../01-settings/colors' as c;
+@use '../../01-settings/fonts' as f;
+@use '../../02-tools/index' as tools;
+
+.c-portfolio {
+    &__content {
+        padding: tools.rem(88) 0 tools.rem(55);
+    }
+
+    &__headline {
+        @extend %section-headline;
+        text-align: center;
+    }
+
+    &__text {
+        @extend %section-text;
+        text-align: center;
+    }
+
+    &__tabs {
+        padding-bottom: 2rem;
+
+        @include tools.media-breakpoint-up(md) {
+            padding-bottom: tools.rem(60);
+        }
+    }
+
+    &__tabs-container {
+        text-align: center;
+    }
+
+    &__tab {
+        @include tools.media-breakpoint-up(sm) {
+            display: inline-block;
+        }
+
+        &:not(:last-child) {
+            @include tools.media-breakpoint-up(sm) {
+                margin-right: 1rem;
+            }
+
+            @include tools.media-breakpoint-up(md) {
+                margin-right: 2rem;
+            }
+
+            @include tools.media-breakpoint-up(lg) {
+                margin-right: tools.rem(53);
+            }
+        }
+    }
+
+    &__tab-button {
+        position: relative;
+        padding-bottom: 0.5rem;
+        color: c.$blue-1;
+        font-family: f.$secondary-font-stack;
+        font-weight: 700;
+        font-size: tools.rem(11);
+        text-transform: uppercase;
+        line-height: 1;
+        letter-spacing: 3.4px;
+        transition: color .3s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            color: c.$blue-3;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &--active {
+            &::after {
+                @include tools.pseudo {
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 3px;
+                    background-color: c.$blue-1;
+                }
+            }
+        }
+    }
+
+    &__gallery {
+        display: grid;
+
+        @include tools.media-breakpoint-up(md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include tools.media-breakpoint-up(lg) {
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: tools.rem(100);
+        }
+    }
+
+    &__item {
+        @mixin generate-grid-item($start: 1, $end, $color) {
+            background-color: $color;
+
+            @include tools.media-breakpoint-up(md) {
+                min-height: tools.rem(200);
+            }
+            
+            @include tools.media-breakpoint-up(lg) {
+                grid-row-start: $start;
+                grid-row-end: span $end;
+            }
+        }
+
+        min-height: 100vh;
+
+        @include tools.media-breakpoint-up(md) {
+            min-height: auto;
+        }
+
+        &--first {
+            @include generate-grid-item($end: 4, $color: c.$brown-1);
+        }
+
+        &--second {
+            @include generate-grid-item($end: 5, $color: c.$blue-2);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-top: tools.rem(23);
+            border-right: tools.rem(17);
+            border-bottom: tools.rem(23);
+            border-left: tools.rem(18);
+            border-color: c.$brown-3;
+            border-style: solid;
+        }
+
+        &--third {
+            @include generate-grid-item($end: 3, $color: c.$brown-2);
+        }
+
+        &--fourth {
+            @include generate-grid-item($end: 4, $color: c.$grey-1);
+        }
+
+        &--fifth {
+            @include generate-grid-item($start: 5, $end: 4, $color: c.$brown-2);
+        }
+
+        &--sixth {
+            @include generate-grid-item($start: 6, $end: 3, $color: c.$brown-1);
+        }
+
+        &--seventh {
+            @include generate-grid-item($start: 4, $end: 5, $color: c.$brown-1);
+        }
+
+        &--eighth {
+            @include generate-grid-item($start: 5, $end: 4, $color: c.$brown-2);
+        }
+    }
+
+    &__item-headline {
+        margin-bottom: 1rem;
+        color: c.$white;
+        font-family: f.$secondary-font-stack;
+        font-weight: 600;
+        font-size: tools.rem(18);
+        line-height: math.div(21, 18);
+        text-transform: uppercase;
+        letter-spacing: 5.56px;
+    }
+
+    &__item-teaser {
+        position: relative;
+        color: c.$white;
+        font-family: f.$primary-font-stack;
+        font-weight: 300;
+        font-size: tools.rem(18);
+        line-height: math.div(30, 18);
+
+        &::after {
+            @include tools.pseudo {
+                bottom: tools.rem(20) * -1;
+                left: 50%;
+                transform: translateX(-50%);
+                width: tools.rem(90);
+                height: 1px;
+                background-color: c.$white;
+            }
+
+        }
+    }
+
+    &__cta {
+        display: flex;
+        justify-content: center;
+        padding: tools.rem(50) 0;
+
+        @include tools.media-breakpoint-up(lg) {
+            padding: tools.rem(101) 0 tools.rem(105);
+        }
+    }
+}

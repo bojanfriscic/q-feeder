@@ -53,12 +53,6 @@ function styles() {
 };
 
 function scripts() {
-    /* const b = browserify({
-      entries: 'app/scripts/main.js',
-      transform: babelify,
-      debug: true
-    }); */
-
     const b = browserify('./app/scripts/main.js', {
             debug: true
         })
