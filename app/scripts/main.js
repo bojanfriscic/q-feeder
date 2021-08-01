@@ -10,6 +10,9 @@ import {
 import {
     Hero
 } from './components/hero';
+import {
+    Portfolio
+} from './components/portfolio';
 
 const components = [{
         selector: '.js-nav',
@@ -22,6 +25,10 @@ const components = [{
     {
         selector: '.js-hero',
         classRef: Hero
+    },
+    {
+        selector: '.js-portfolio',
+        classRef: Portfolio
     }
 ];
 
