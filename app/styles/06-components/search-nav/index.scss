@@ -1,0 +1,27 @@
+@use '../../01-settings/colors' as c;
+@use '../../02-tools/functions' as f;
+@use '../../02-tools/mixins' as m;
+
+.c-search-nav {
+    display: none;
+
+    @include m.media-breakpoint-up(lg) {
+        display: block;
+        margin-left: 1.5rem;
+    }
+
+    @include m.media-breakpoint-up(xl) {
+        margin-left: f.rem(67);
+    }
+
+    &__link {
+        display: inline-block;
+        width: f.rem(23);
+        height: f.rem(23);
+    }
+
+    &__icon {
+        width: 100%;
+        object-fit: cover;
+    }
+}

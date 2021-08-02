@@ -2,11 +2,11 @@ import {
     Website
 } from './utils/website';
 import {
+    Header
+} from './components/header';
+import {
     Nav
 } from './components/nav';
-import {
-    Search
-} from './components/search';
 import {
     Hero
 } from './components/hero';
@@ -15,12 +15,12 @@ import {
 } from './components/portfolio';
 
 const components = [{
-        selector: '.js-nav',
-        classRef: Nav
+        selector: '.js-header',
+        classRef: Header
     },
     {
-        selector: '.js-search',
-        classRef: Search
+        selector: '.js-nav',
+        classRef: Nav
     },
     {
         selector: '.js-hero',
