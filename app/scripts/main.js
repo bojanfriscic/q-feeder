@@ -8,9 +8,6 @@ import {
     Nav
 } from './components/nav';
 import {
-    Search
-} from './components/search';
-import {
     Hero
 } from './components/hero';
 import {
@@ -24,10 +21,6 @@ const components = [{
     {
         selector: '.js-nav',
         classRef: Nav
-    },
-    {
-        selector: '.js-search',
-        classRef: Search
     },
     {
         selector: '.js-hero',

@@ -31,6 +31,16 @@
             </label>
             <ul class="c-nav__items js-nav-items">
               <div class="c-nav__container">
+                <section class="c-search">
+                  <form class="c-search__form">
+                    <div class="c-search__input-container">
+                      <input type="text" class="c-search__input" placeholder="What are you looking for?">
+                      <button class="c-search__button" type="submit">
+                        <img src="./images/icon-find.png" alt="Search" class="c-search__icon">
+                      </button>
+                    </div>
+                  </form>
+                </section>
                 <li class="c-nav__item">
                   <a href="#" class="c-nav__link">Home</a>
                 </li>
@@ -52,20 +62,11 @@
               </div>
             </ul>
           </nav>
-          <section class="c-search js-search">
-            <button class="c-search__toggle js-search-toggle" type="button">
-              <img src="./images/icon-find.png" alt="Search" class="c-search__toggle-icon">
-            </button>
-            <div class="c-search__backdrop js-search-backdrop">
-              <article class="c-search__box js-search-box">
-                <button class="c-search__close js-search-close" type="button">&times;</button>
-                <form class="c-search__form">
-                  <input type="text" class="c-search__input o-input" placeholder="What are you looking for?">
-                  <button class="c-search__submit o-button" type="submit">Search</button>
-                </form>
-              </article>
-            </div>
-          </section>
+          <nav class="c-search-nav">
+            <a class="c-search-nav__link">
+              <img src="./images/icon-find.png" alt="Go to Search Page" class="c-search-nav__icon">
+            </a>
+          </nav>
         </section>
       </div>
     </header>
